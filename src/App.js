@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import WelcomePage from './components/Screens/WelcomePage/WelcomePage';
+import HomePage from "./components/Screens/HomePage/HomePage";
+import QuoteGeneratorPage from "./components/Pages/QuoteGeneratorPage";
+import SentenceCheckerPage from "./components/Pages/SentenceCheckerPage";
+import SentenceMakerPage from "./components/Pages/SentenceMakerPage";
+import TranslationPage from "./components/Pages/TranslationPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="/homepage" element={<HomePage />} />
+        <Route path="/quote-generator" element={<QuoteGeneratorPage />} />
+        <Route path="/sentence-maker" element={<SentenceMakerPage />} />
+        <Route path="/sentence-checker" element={<SentenceCheckerPage />} />
+        <Route path="/translation" element={<TranslationPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
